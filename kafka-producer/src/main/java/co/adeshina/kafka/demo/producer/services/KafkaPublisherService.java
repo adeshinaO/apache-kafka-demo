@@ -1,27 +1,11 @@
 package co.adeshina.kafka.demo.producer.services;
 
-import co.adeshina.kafka.demo.producer.exception.PublishFailedException;
+// todo: Javadoc
+public interface KafkaPublisherService<K, V> {
 
-import org.apache.kafka.clients.producer.Producer;
+    // interface for class that writes messages to Kafka
+    void publish(K key, V message);
 
-import org.apache.kafka.clients.producer.RecordMetadata;
-import org.apache.kafka.clients.producer.internals.FutureRecordMetadata;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
-public class KafkaPublisherService implements PublisherService<String, String> {
-
-    private Producer<String, String> producer;
-
-    @Autowired // @Qualifier may be needed on this param later.. wait after testing.
-    public KafkaPublisherService(Producer<String, String> producer) {
-        this.producer = producer;
-    }
-
-    @Override
-    public void publish(String key, String message) throws PublishFailedException {
-        producer.send(null); // todo: see Javadocs -- it throws exceptions
-    }
+    // returns the topic to which this publisher is sending messages.
+    String topic();
 }
-

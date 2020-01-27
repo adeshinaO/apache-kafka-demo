@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Consumer</title>
+</head>
+<body>
+
+<h3>
+    Messages Consumed From Kafka Broker <input type="button" value = "Refresh" onclick="reload()" />
+</h3>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Message</th>
+                <th>Partition</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="msg : ${messages}">
+                <td th:text="${msg.senderName}"></td>
+                <td th:text="${msg.content}"></td>
+                <td th:text="${msg.partition}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+function reload() {
+  window.location.reload();
+}
+</script>
+
+</body>
+</html>

@@ -1,4 +1,0 @@
-
-# kafka service should `depend-on` zookeeper service
-# consumer services should depend on producer which should depend on kafka.
-

@@ -23,8 +23,7 @@
 
     <modules>
         <module>kafka-producer</module>
-        <module>kafka-consumer-1</module>
-        <module>kafka-consumer-2</module>
+        <module>kafka-consumer</module>
     </modules>
 
     <dependencyManagement>
@@ -36,33 +35,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.spotify</groupId>
-                    <artifactId>dockerfile-maven-plugin</artifactId>
-                    <version>${spotify.dockerfile-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>default</id>
-                            <goals>
-                                <goal>build</goal>
-                                <goal>push</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <repository>co.adeshina/kafka-demo</repository>
-                        <tag>${project.version}</tag>
-                        <buildArgs>
-                            <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
-                        </buildArgs>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 
 </project>

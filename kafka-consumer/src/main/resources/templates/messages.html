@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kafka Consumer</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <title>Kafka Consumer Data</title>
 </head>
 <body>
 
@@ -11,9 +12,9 @@
     Messages Consumed From Kafka Broker <input type="button" value = "Refresh" onclick="reload()" />
 </h3>
 
-<div>
-    <table>
-        <thead>
+<div class="container">
+    <table class="table table-sm table-bordered">
+        <thead class="thead-dark">
             <tr>
                 <th>Sender</th>
                 <th>Message</th>

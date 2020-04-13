@@ -18,7 +18,6 @@
     <properties>
         <java.version>1.8</java.version>
         <kafk.clients.version>2.4.0</kafk.clients.version>
-        <spotify.dockerfile-plugin.version>1.4.13</spotify.dockerfile-plugin.version>
     </properties>
 
     <modules>

@@ -1,3 +1,3 @@
 FROM openjdk:8-jre-alpine
-ADD target/${JAR_FILE} /usr/share/kafka-demo-consumer-2.jar
-ENTRYPOINT ["java", "-jar", "/usr/share/kafka-demo-consumer.jar"]
+COPY target/kafka-consumer-1.0.0.jar /usr/share/kafka-consumer.jar
+ENTRYPOINT ["java", "-jar", "/usr/share/kafka-consumer.jar"]
